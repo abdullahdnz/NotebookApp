@@ -1,0 +1,40 @@
+﻿@model Note
+
+@{
+    ViewData["Title"] = "Note Details";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+<h1>Detail</h1>
+<hr />
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label" style="font-weight:900"></label>
+                <input asp-for="Title" class="form-control" readonly />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Description" class="control-label" style="font-weight:900"></label>
+                <textarea asp-for="Description" cols="70" rows="8" readonly></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="CreateDate" class="control-label" style="font-weight:900"></label>
+                <input asp-for="CreateDate" class="form-control" readonly />
+                <span asp-validation-for="CreateDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <a class="btn btn-secondary float-right" asp-action="Edit" asp-route-id="@Model.ID"><i class="fa-solid fa-pen-to-square" style="padding:5px"></i>Edit</a>
+                <a class="btn btn-primary" asp-action="GetAll"><i class="fa-solid fa-list" style="padding:5px"></i>List</a>
+            </div>
+        </div>
+    </div>
+</div>
